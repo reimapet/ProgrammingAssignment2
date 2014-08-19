@@ -6,6 +6,8 @@
 ##
 ## Example usage for retrieving the inverse
 ## mCache$getInverse()
+## OR
+## cacheSolve( mCache )
 ##
 ## If you want to reuse same object with different matrix
 ## mCache$set( matrix( 1:9, 3, 3) )
