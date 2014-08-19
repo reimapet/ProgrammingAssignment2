@@ -23,20 +23,20 @@ makeCacheMatrix <- function(x = matrix()) {
   ## Sets the matrix and initializes variables
   set <- function(matrix) 
   {
-    m <<- matrix
+    x <<- matrix
     cachedInverse <<- NULL
   }
   
   get <- function() 
   {
-    m
+    x
   }
   
   getInverse <- function()
   {
     if( is.null(cachedInverse))
     {
-      cachedInverse <<- solve( m )
+      cachedInverse <<- solve( x )
     } 
     cachedInverse
   }
@@ -47,7 +47,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## cacheSolve calls the getInverse for the cached matrix
 ## and returns the cached value
-cacheSolve <- function ( m = matrix(), ... )
+cacheSolve <- function ( x = matrix(), ... )
 {
-  m$getInverse()
+  x$getInverse()
 }
