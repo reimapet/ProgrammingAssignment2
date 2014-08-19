@@ -34,11 +34,11 @@ makeCacheMatrix <- function(x = matrix()) {
     x
   }
   
-  getInverse <- function()
+  getInverse <- function(...)
   {
     if( is.null(cachedInverse))
     {
-      cachedInverse <<- solve( x )
+      cachedInverse <<- solve( x, ... )
     } 
     cachedInverse
   }
@@ -51,5 +51,5 @@ makeCacheMatrix <- function(x = matrix()) {
 ## and returns the cached value
 cacheSolve <- function ( x = matrix(), ... )
 {
-  x$getInverse()
+  x$getInverse(...)
 }
